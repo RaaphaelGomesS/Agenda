@@ -1,0 +1,63 @@
+<%- include('includes/head') %> <%- include('includes/navbar') %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+
+    <div class="col-lg-8 my-5">
+      <h1 class="text-center">Login</h1>
+      <p class="text-center lead">Logue ou crie sua conta:</p>
+
+      <%- include("includes/messages") %>
+
+      <div class="row">
+        <div class="col-lg my-3">
+          <h4>Login</h4>
+          <p>Realize o login para acessar a Agenda:</p>
+
+          <form action="/login/login" method="POST">
+            <input type="hidden" name="_csrf" value=<%= csrfToken%> >
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" class="form-control" name="email">
+            </div>
+
+            <div class="form-group">
+              <label>Senha</label>
+              <input type="password" class="form-control" name="password">
+            </div>
+
+            <button type="submit" class="btn btn-dark">Logar</button>
+          </form>
+        </div>
+
+
+        <div class="col-lg my-3">
+          <h4>Cadastro</h4>
+          <p>Caso não possua uma conta, crie uma:</p>
+
+          <form action="/login/register" method="POST">
+            <input type="hidden" name="_csrf" value= <%= csrfToken%> >
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" class="form-control" name="email">
+            </div>
+
+            <div class="form-group">
+              <label>Senha</label>
+              <input type="password" class="form-control" name="password">
+            </div>
+
+            <button type="submit" class="btn btn-dark">Cadastrar</button>
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-lg-2"></div>
+  </div>
+</div>
+
+<%- include('includes/footer') %>
