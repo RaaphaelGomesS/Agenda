@@ -58,6 +58,6 @@ app.use(routes);
 
 app.on("pronto", () => {
   app.listen(process.env.PORT || 3000, () => {
-    console.log(`Servidor executando na porta ${PORT}`);
+    console.log(`Servidor executando na porta ${process.env.PORT}`);
   });
 });
